@@ -4,7 +4,7 @@
 거기서 원하는 이름을 입력하면 해당하는 음식점들을 random으로 추천해줌 
 (다 파일로) (파일의 데이터는 10개정도씩만 넣어놓고 나머지는 입력가능하게)
 
-음식 데이터 수정 삭제 입력 || 식당 데이터 수정 삭제 입력 (file내용을 바꾸는것임.) 
+음식 데이터 수정+삭제+입력 || 식당 데이터 수정+삭제+입력 (file내용을 바꾸는것임.) 
 
 먹은 이력 통계 
 (음식점까지 선택이 완료되면 해당 데이터를 파일에 저장해서 
@@ -12,10 +12,55 @@
 
 --가능하면 먹은이력통계 파일도 수정할 수 있도록 만들기
 
-나누어야 될 것들 : 음식고르기,  고른 음식 식당 추천 , 음식 파일, 식당 파일, 음식데이터 수정 삭제 입력
+나누어야 될 것들 : 음식고르기,  고른 음식 식당 추천 , 전체파일 합쳐놓은 실행파일, 음식 파일, 식당 파일, 음식데이터 수정 삭제 입력
 식당 데이터 수정 삭제 입력, 먹은 이력 통계
 
+어떤 음식이 어디에 포함되어있는지 메인에 넣어서 알려줄것
+input.txt
+		
+https://velog.io/@vgo_dongv/Java-File%EA%B3%BC-Map%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8%EB%B6%80-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8
 		
 
+try(
+						Reader reader = new FileReader(file);
+						BufferedReader br = new BufferedReader(reader);
+						){
+					String line = "";
+					while((line = br.readLine())!= null) {
+						while(true) {
+							System.out.print("한식,중식,일식,양식중 하나를 입력해주세요.  -> ");
+							String category = sc.next();
+							if(category.contains("한식")||category.contains("중식")||category.contains("일식")||category.contains("양식")) {
+							}else { 
+								System.out.println("잘못입력하신것 같습니다. 다시입력해주세요 ㅜㅡㅜ");
+								continue;
+								}
+							System.out.print("매운걸 원하시나요?(예/아니요)  ->  ");
+							String strong = sc.next();
+							if(strong.contains("예")||strong.contains("아니요")){
+							}else {	
+								System.out.println("잘못입력하신것 같습니다. 다시입력해주세요 ㅜㅡㅜ");
+								continue;
+								}
+							System.out.print("종류를 선택해주세요.(밥,면,빵,기타) ->  ");
+							String type = sc.next();
+							if(type.contains("밥")||type.contains("면")||type.contains("빵")||type.contains("기타")){
+							}else {
+								System.out.println("잘못입력하신것 같습니다. 다시입력해주세요 ㅜㅡㅜ");
+								continue;
+								}
+							if(line.contains(category)&&line.contains(strong)&&line.contains(type)) {
+								
+								String[] newline = line.split(",");
+								String firstname = newline[0];
+								
+							}
+						}
+					}
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+		
 
 

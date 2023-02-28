@@ -31,7 +31,7 @@ public class SelectFood {
 				while(true) {
 					System.out.print("한식,중식,일식,양식중 하나를 입력해주세요.  -> ");
 					String category1 = sc.next();
-					if(sfFood.containsValue(category1)) {	
+					if(fc[0].contains(category1)) {	
 						System.out.println("존재");
 					} else { 
 						System.out.println("잘못입력하신것 같습니다. 다시입력해주세요 ㅜㅡㅜ");

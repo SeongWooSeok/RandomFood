@@ -13,10 +13,15 @@ public class Run {
 			System.out.println(" ------------------------ ");
 			System.out.println("1. 음식 추천");
 			System.out.println("2. 식당 추천");
+			System.out.println("3. 음식 추가 및 수정");
+			System.out.println("4. 식당 추가 및 수정");
 			int input = sc.nextInt();
 			
 			switch(input) {
 			case 1: sf.load(); break;
+//			case 2:
+//			case 3:
+//			case 4:
 			}
 		}
 	}

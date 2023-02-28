@@ -11,6 +11,11 @@ public class data {
 		this.type = type;
 	}
 
+	@Override
+	public String toString() {
+		return "data [category=" + category + ", spicy=" + spicy + ", type=" + type + "]";
+	}
+
 	public String getCategory() {
 		return category;
 	}

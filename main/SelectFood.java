@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class SelectFood {
@@ -28,34 +30,29 @@ public class SelectFood {
 				String[] fn = line.split("/"); // 음식이름과 조건을 나눔
 				String name = fn[0];
 				String[] fc = fn[1].split(",");// 세가지의 조건을 나눔
-				sfFood.put(name, new data(fc[0] , fc[1], fc[2])); 
-				while(true) {
-					System.out.print("한식,중식,일식,양식중 하나를 입력해주세요.  -> ");
-					String category1 = sc.next();
-					System.out.print("매운걸 원하시나요?(예/아니요)  ->  ");
-					String strong = sc.next();
-					System.out.print("종류를 선택해주세요.(밥,면,빵,기타) ->  ");
-					String type = sc.next();
-					if(fc[0].contains(category1)&&fc[1].contains(strong)&&fc[2].contains(type)) {	
-						Iterator<String> keys = sfFood.keySet().iterator();
-						while(keys.hasNext()) {
-							String key = keys.next();
-							System.out.println(key);
-						}
-					} else { 
-						System.out.println("잘못입력하신것 같습니다. 다시입력해주세요 ㅜㅡㅜ");
-						continue;
-					}
-		
+				sfFood.put(name, new data(fc[0] , fc[1], fc[2]));
 				}
-			}
-			reader.close();
-			br.close();
+				reader.close();
+				br.close();
+					while(true) {
+						System.out.print("한식,중식,일식,양식중 하나를 입력해주세요.  -> ");
+						String category1 = sc.next();
+						System.out.print("매운걸 원하시나요?(예/아니요)  ->  ");
+						String strong = sc.next();
+						System.out.print("종류를 선택해주세요.(밥,면,빵,기타) ->  ");
+						String type = sc.next();
+//						if(sfFood.containsValue(category1)) {
+//							Iterator<Map.Entry<String, data>> k = sfFood.entrySet().iterator();
+//							while(k.hasNext()) {
+//								Map.Entry<String, data> entry = k.next();
+//								System.out.println(entry.getKey() );
+//							}
+//						}
+					}	
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
-
 }
 
 	

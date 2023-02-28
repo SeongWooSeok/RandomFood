@@ -21,46 +21,4 @@ input.txt
 https://velog.io/@vgo_dongv/Java-File%EA%B3%BC-Map%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8%EB%B6%80-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8
 		
 
-try(
-						Reader reader = new FileReader(file);
-						BufferedReader br = new BufferedReader(reader);
-						){
-					String line = "";
-					while((line = br.readLine())!= null) {
-						while(true) {
-							System.out.print("한식,중식,일식,양식중 하나를 입력해주세요.  -> ");
-							String category = sc.next();
-							if(category.contains("한식")||category.contains("중식")||category.contains("일식")||category.contains("양식")) {
-							}else { 
-								System.out.println("잘못입력하신것 같습니다. 다시입력해주세요 ㅜㅡㅜ");
-								continue;
-								}
-							System.out.print("매운걸 원하시나요?(예/아니요)  ->  ");
-							String strong = sc.next();
-							if(strong.contains("예")||strong.contains("아니요")){
-							}else {	
-								System.out.println("잘못입력하신것 같습니다. 다시입력해주세요 ㅜㅡㅜ");
-								continue;
-								}
-							System.out.print("종류를 선택해주세요.(밥,면,빵,기타) ->  ");
-							String type = sc.next();
-							if(type.contains("밥")||type.contains("면")||type.contains("빵")||type.contains("기타")){
-							}else {
-								System.out.println("잘못입력하신것 같습니다. 다시입력해주세요 ㅜㅡㅜ");
-								continue;
-								}
-							if(line.contains(category)&&line.contains(strong)&&line.contains(type)) {
-								
-								String[] newline = line.split(",");
-								String firstname = newline[0];
-								
-							}
-						}
-					}
-					br.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-		
-
-
+https://pjh-raccoon.tistory.com/13

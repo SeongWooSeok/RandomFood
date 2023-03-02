@@ -91,43 +91,30 @@ public class test {
 //	        System.out.println(str);
 //
 		
-		Scanner sc = new Scanner(System.in);
-		File file1 = new File("src\\main\\Restaurant.txt"); 
-		try {
-			System.out.println("ex)과 같이 삭제하고 싶은 값을 넣어주세요: ");
-			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-			System.out.println("ex) 된장찌개/한식,아니요,밥");
-            String input = reader.readLine();
-            
-            FileReader fileReader = new FileReader(file1);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line;
-            StringBuilder stringBuilder = new StringBuilder();//이거 안쓰면 String 값추가못함
-                       
-            // 파일에서 삭제할 값을 찾아서 제외
-            while ((line = bufferedReader.readLine()) != null) {
-            	String[] rn = line.split("/");
-            	String name = rn[0];
-            	
-                if (name.equals(input)) {
-                    stringBuilder.append(line);
-                    stringBuilder.append(System.lineSeparator());
+		Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the string to delete: ");
+        String input = scanner.nextLine();
+
+        Path path = Paths.get("file.txt"); // Replace with your file path
+        try {
+            BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8);
+            String currentLine;
+            StringBuilder sb = new StringBuilder();
+
+            while ((currentLine = reader.readLine()) != null) {
+                if (!currentLine.contains(input)) {
+                    sb.append(currentLine);
+                    sb.append("\n");
                 }
             }
-            fileReader.close();
-            bufferedReader.close();
+            reader.close();
 
-            // 파일에 수정
-            FileWriter writer = new FileWriter(file1,true);
-            writer.write(stringBuilder.toString());
+            FileWriter writer = new FileWriter("file.txt");
+            writer.write(sb.toString());
             writer.close();
 
-            System.out.println("파일에서 " + input + "을(를) 삭제했습니다.");
-
-		}catch(IOException e) {
-			System.out.println("파일에 데이터를 삭제하지 못했습니다.");
-			e.printStackTrace();
-		}
-		}
-}
+            System.out.println("Line containing '" + input + "' deleted successfully!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 

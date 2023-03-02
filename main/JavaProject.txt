@@ -48,3 +48,7 @@ ArrayList<String> getPersonInfoWithName(String name) {
 			}
 			return al;
 	}
+	
+		for(Map.Entry<String, data> entry : sfFood.entrySet()) {
+								if(entry.getValue().equals(category1)&&entry.getValue().equals(strong)&&entry.getValue().equals(type)) {
+										keyList.add(entry.getKey());

@@ -40,30 +40,20 @@ public class Restaurant {
 			}
 			reader.close();
 			br.close();
-			SelectFood sf = new SelectFood();
 			Random rd = new Random();
-			int i = 0;
-			String[] arr = new String[rsFood.size()];
-				Set<Entry<String, String[]>> entrySet = rsFood.entrySet();
-				Iterator<Entry<String, String[]>> entry = entrySet.iterator();
-				while(entry.hasNext()) {
-					Entry<String, String[]> en = entry.next();
-					String[] rt = en.getValue();
-					List<String> li = new ArrayList<>(Arrays.asList(rt));
-					String rname= en.getKey();
-					arr[i] = en.getKey();
-					i++;
-					
-					List<String> li2 = new ArrayList<>(Arrays.asList(arr));
-					if(li2.contains(sf.getFoodName())) {
-					int randomIndex = rd.nextInt(li.size());
-					System.out.println("추천식당은 "+li.get(randomIndex) + "입니다."); // 식당 중에서 랜덤으로 한곳을 출력함
-					}
+			System.out.println("추천받은 음식중에서 원하는 음식의 이름을 입력해주세요 : ");
+			String input = sc.next();
+			for(String key : rsFood.keySet()) {
+				if(key.contains(input)) { //음식점들의 주소중 하나를 랜덤으로 골라옴
+					String[] keyValue = rsFood.get(key);
+					int index = rd.nextInt(keyValue.length);
+					String randomValue = keyValue[index];
+					System.out.println(input + "의 추천식당은"+ randomValue);
 				}
+			}
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
 	
 }

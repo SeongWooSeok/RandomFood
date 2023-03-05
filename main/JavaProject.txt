@@ -16,39 +16,3 @@
 식당 데이터 수정 삭제 입력, 먹은 이력 통계
 
 어떤 음식이 어디에 포함되어있는지 메인에 넣어서 알려줄것
-input.txt
-
-https://velog.io/@vgo_dongv/Java-File%EA%B3%BC-Map%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8%EB%B6%80-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8
-
-
-https://pjh-raccoon.tistory.com/13
-
-Iterator<Map.Entry<String, data>> kkk = sfFood.entrySet().iterator();
-			Map.Entry<String, data> entry = kkk.next();
-			System.out.println(String.format(entry.getKey(),entry.getValue()));
-			
-			package study15_1;
-
-ArrayList<String> getPersonInfoWithName(String name) {
-		ArrayList<String> al = new ArrayList<>();
-		Set<Entry<String, PersonInfo>> entrySet = pList.entrySet();
-		Iterator<Entry<String, PersonInfo>> entry = entrySet.iterator();
-		while(entry.hasNext()) {
-			Entry<String, PersonInfo> en = entry.next();
-			PersonInfo pInfo = en.getValue();
-			if(pInfo.getName().equals(name)) {
-				 String eName = pInfo.getName();
-				 String eTel =en.getKey();
-				 String eAddr = pInfo.getAdress();
-				al.add( "||이름: " + eName +"||전화번호: " + eTel + "||주소: "+eAddr);
-			}
-		}
-			if(al.size()==0){
-				al.add("해당 검색 대상이 없습니다.");
-			}
-			return al;
-	}
-	
-		for(Map.Entry<String, data> entry : sfFood.entrySet()) {
-								if(entry.getValue().equals(category1)&&entry.getValue().equals(strong)&&entry.getValue().equals(type)) {
-										keyList.add(entry.getKey());

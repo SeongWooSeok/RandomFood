@@ -91,30 +91,104 @@ public class test {
 //	        System.out.println(str);
 //
 		
-		Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the string to delete: ");
-        String input = scanner.nextLine();
-
-        Path path = Paths.get("file.txt"); // Replace with your file path
-        try {
-            BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8);
-            String currentLine;
-            StringBuilder sb = new StringBuilder();
-
-            while ((currentLine = reader.readLine()) != null) {
-                if (!currentLine.contains(input)) {
-                    sb.append(currentLine);
-                    sb.append("\n");
-                }
-            }
-            reader.close();
-
-            FileWriter writer = new FileWriter("file.txt");
-            writer.write(sb.toString());
-            writer.close();
-
-            System.out.println("Line containing '" + input + "' deleted successfully!");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//		Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter the string to delete: ");
+//        String input = scanner.nextLine();
+//
+//        Path path = Paths.get("file.txt"); // Replace with your file path
+//        try {
+//            BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8);
+//            String currentLine;
+//            StringBuilder sb = new StringBuilder();
+//
+//            while ((currentLine = reader.readLine()) != null) {
+//                if (!currentLine.contains(input)) {
+//                    sb.append(currentLine);
+//                    sb.append("\n");
+//                }
+//            }
+//            reader.close();
+//
+//            FileWriter writer = new FileWriter("file.txt");
+//            writer.write(sb.toString());
+//            writer.close();
+//
+//            System.out.println("Line containing '" + input + "' deleted successfully!");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//       }
+//		Restaurant rs = new Restaurant();
+//		Scanner sc = new Scanner(System.in);
+//		File file1 = new File("src\\main\\Restaurant.txt"); //음식점 데이터
+//		try
+//		{
+//			Reader reader = new FileReader(file1);
+//			BufferedReader br = new BufferedReader(reader);
+//			String line = "";
+//			while((line = br.readLine())!= null) {
+//				String[] fn = line.split("/"); //음식이름과 음식점 이름을 나눔
+//				String name = fn[0];
+//				String[] fc = fn[1].split(",");
+//				rs.rsFood.put(name, fc);
+//			}
+//			for(Entry<String, String[]> entrySet : rs.rsFood.entrySet()) {
+//				System.out.println(entrySet.getKey() + " : " + Arrays.toString(entrySet.getValue()));
+//			}
+//		}catch(IOException e) {
+//				e.printStackTrace();
+//			}
+		
+//		File file1 = new File("src\\main\\record.txt");
+//		try
+//		{
+//			Reader reader = new FileReader(file1);
+//			BufferedReader br = new BufferedReader(reader);
+//			String line;
+//			while((line = br.readLine())!= null) {
+//				String[] fn = line.split("/"); // 음식이름과 음식점 이름을 나눔
+//				String foodname = fn[0];
+//				String resname = fn[1];
+//				ArrayList<String> al1 = new ArrayList<String>(Arrays.asList(foodname));
+//				ArrayList<String> al2 = new ArrayList<String>(Arrays.asList(resname));
+//				HashMap<String, Integer> Map1 = new HashMap<String, Integer>();
+//				HashMap<String, Integer> Map2 = new HashMap<String, Integer>();
+//				
+//				for (String element : al1) {
+//					if (Map1.containsKey(element)) {
+//						Map1.put(element, Map1.get(element) + 1);
+//					} else {
+//						Map1.put(element, 1);
+//					}
+//				}
+//				 for (String element : Map1.keySet()) {
+//			            int frequency = Map1.get(element);
+//			            if(frequency>1) {
+//			            System.out.println("음식:" + element + " 횟수: " + frequency + "번");
+//			            }
+//			        }
+//				 
+//				 for (String element : al2) {
+//						if (Map2.containsKey(element)) {
+//							Map2.put(element, Map2.get(element) + 1);
+//						} else {
+//							Map2.put(element, 1);
+//						}
+//					}
+//					 for (String element : Map2.keySet()) {
+//				            int frequency = Map2.get(element);
+//				            if(frequency>1) {
+//				            System.out.println("식당:" + element + " 횟수: " + frequency + "번");
+//				            }
+//				        }
+//				
+//			}
+//       
+//			reader.close();
+//			br.close();
+//			
+//		}catch(IOException e) {
+//			e.printStackTrace();
+//		}
+	}
+}
 
